@@ -5,4 +5,5 @@
     echo "<h1>Perfil d'usuari</h1>";
     echo "Usuari; ".$_COOKIE["userName"]."<br>";
     echo "Data; ".$_COOKIE["data"]."<br>";
+    
 ?>

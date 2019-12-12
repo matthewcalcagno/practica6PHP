@@ -31,18 +31,18 @@ require_once "../Controller/validacio.php";
         <form action=<?php echo "../Controller/Register.php"; ?> method="post">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Numb d'usuari</label>
-                <input type="text" name="user" class="form-control" value="<?php echo $username; ?>">
+                <input type="text" name="user" class="form-control" value="<?php echo $username; ?>" required>
              <!-- Si troba un error a valicio.php el posara en la variable que toca per despres printarla -->   
                 <span class="help-block"><?php echo $username_err; ?></span>
             </div>    
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label>Contrasenya</label>
-                <input type="password" name="password" class="form-control">
+                <input type="password" name="password" class="form-control" required>
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label>Repeteix la contrasenya</label>
-                <input type="password" name="password-Verify" class="form-control">
+                <input type="password" name="password-Verify" class="form-control" required>
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group">
