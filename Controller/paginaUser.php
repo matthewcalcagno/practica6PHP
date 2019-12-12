@@ -7,6 +7,7 @@ try {
 	die("Error al intentar conectar amb el servidor" . $e->getMessage());
   }
   $username = $_SESSION['username']
+  
   $resultats = $connexio->prepare("SELECT user FROM users WHERE user = :username");
   //introdueix l'usuari que volem buscar a la consulta
   $resultats->bindValue(":username", $username,PDO::PARAM_STR) ;
