@@ -1,0 +1,11 @@
+git fetch
+git status
+
+git pull origin master -> actualizarte al ultimo commit
+
+
+git add para agregar los ficheros, esto es ANTES del commit
+(git add .) para agregar todo
+
+git commit -m "mensaje aqui :D"
+git push origin master -> enviar lo que tienes al repositorio de github
