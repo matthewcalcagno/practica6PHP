@@ -1,8 +1,8 @@
 <?php
+session_start();
 //Matias Aedo
 /* Login PHP que quan valida l'usuari al servidor deixa la sessio oberta.
    La mijora es fer tota la valicio mitjançant PDO i mantenir la sessio inicia, guardant les dades en una cookie, i capturandoles despres amb la pagina d'usuari.*/
-session_start();
 // Comprova si l'usuari a fet login en aquesta sessio
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     header("location: ../View/paginaUser.view.php");
