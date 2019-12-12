@@ -18,7 +18,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
 if(isset($_POST["user"])){
     $username = $_POST["user"];
-    $password = $_POST["password"];
+    $password = hash("sha512",$_POST["password"]);
 
     
 /**
