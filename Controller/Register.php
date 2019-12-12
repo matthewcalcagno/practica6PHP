@@ -6,6 +6,16 @@ session_start();
  * Any errors will be echo'ed out.
  */
 
+
+ /**
+  * If user is already logged in then the user will be redirectedt to 'paginaUser.view.php'
+  */
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    header("location: ../View/paginaUser.view.php");
+    exit;
+}
+
+
 if(isset($_POST["user"])){
     $username = $_POST["user"];
     $password = $_POST["password"];
@@ -20,7 +30,7 @@ if(isset($_POST["user"])){
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $query = "SELECT * FROM users WHERE user = ?";
         $statement = $connection->prepare($query);
-        $statement->execute([$name, $dni]);
+        $statement->execute([$username]);
         $res = $statement->fetchColumn();
     }catch(PDOExeption $e){
         echo $e;
@@ -35,12 +45,16 @@ if(isset($_POST["user"])){
          */
 
         try{
-            $query = "INSERT INTO users (nom, password) VALUES(?, ?)";
+            $query = "INSERT INTO users (user, password) VALUES(?, ?)";
             $connection->prepare($query)->execute([$username, $password]);
+            echo "Registerd!";
+            $_SESSION['username'] = $username;
+            
     
         }catch(PDOExeption $e){
             echo $e;
         }
+        
     }
  
 

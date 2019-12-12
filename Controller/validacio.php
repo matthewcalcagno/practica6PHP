@@ -1,5 +1,5 @@
 <?php 
-session_start();
+
 //Matias Aedo
 /* Arxiu PHP que validara les dades que li pasem al servidor, una vegada validat redigira l'usuari a la
 	seva pagina personal i activara la sessio. Quan l'usuari inicia sessio, creara una cookie amb dades de l'usuari, per depres
