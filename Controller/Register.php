@@ -18,7 +18,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
 if(isset($_POST["user"])){
     $username = $_POST["user"];
-    $password = hash("sha512",$_POST["password"]);
+    $password = hash("sha512",);
 
     
 /**
@@ -47,7 +47,8 @@ if(isset($_POST["user"])){
         try{
             $query = "INSERT INTO users (user, password) VALUES(?, ?)";
             $connection->prepare($query)->execute([$username, $password]);
-            echo "Registerd!";
+            
+            header("location: ../View/paginaUser.view.php");
             $_SESSION['username'] = $username;
             
     
