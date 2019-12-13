@@ -8,6 +8,4 @@ session_start();
     echo "<h1>Perfil d'usuari</h1>";
     echo "Id; ".$user[id]."<br>";
     echo "Usuari; ".$user[user]."<br>";
-    echo "Data; "."<br>";
-
 ?>
