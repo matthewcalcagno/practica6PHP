@@ -48,7 +48,6 @@ require_once "../Controller/validacio.php";
                 <input type="password" name="password" class="form-control" required>
             </div>
             <div class="form-group">
-                <label>Contrasenya</label>
                 <input type="submit" class="btn btn-primary" value="entra">
             </div>
         </form>
