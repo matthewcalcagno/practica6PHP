@@ -1,10 +1,13 @@
 <?php
 session_start();
 //Matias Aedo
-    // perfil d'usuari que es mostrara sempre i quan la sessio esta activa
-    // rescata les dades de la cookie
+
+    // Cridem l'arxiu que conectara amb el servidor
+    require_once "../Controller/paginaUser.php";
+
     echo "<h1>Perfil d'usuari</h1>";
-    echo "Usuari; ".$_SESSION['username']."<br>";
+    echo "Id; ".$user[id]."<br>";
+    echo "Usuari; ".$user[user]."<br>";
     echo "Data; "."<br>";
-    
+
 ?>

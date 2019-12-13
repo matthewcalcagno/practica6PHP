@@ -6,9 +6,10 @@ try {
   } catch (Exception $e) {
 	die("Error al intentar conectar amb el servidor" . $e->getMessage());
   }
-  $username = $_SESSION['username']
-  
-  //$resultats = $connexio->prepare("SELECT user FROM users WHERE user = :username");
+  $username = $_SESSION['username'];
+  $resultats = $connexio->prepare("SELECT id, user FROM users WHERE user = :username");
   //introdueix l'usuari que volem buscar a la consulta
-  //$resultats->bindValue(":username", $username,PDO::PARAM_STR) ;
+  $resultats->bindValue(":username", $username,PDO::PARAM_STR) ;
+  $resultats->execute();
+	$user=$resultats->fetch(PDO::FETCH_ASSOC);
 ?>
