@@ -48,9 +48,9 @@ if(isset($_POST["user"])){
         try{
             $query = "INSERT INTO users (user, password) VALUES(?, ?)";
             $connection->prepare($query)->execute([$username, $password]);
-            
-            header("location: ../View/paginaUser.view.php");
             $_SESSION['username'] = $username;
+            header("location: ../View/paginaUser.view.php");
+            
             
     
         }catch(PDOExeption $e){

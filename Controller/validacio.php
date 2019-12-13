@@ -1,6 +1,5 @@
 <?php 
 
-//Matias Aedo
 /* Arxiu PHP que validara les dades que li pasem al servidor, una vegada validat redigira l'usuari a la
 	seva pagina personal i activara la sessio. Quan l'usuari inicia sessio, creara una cookie amb dades de l'usuari, per depres
 	ser capturades per la pagina del usuari.*/
@@ -15,8 +14,8 @@ try {
   if($_SERVER["REQUEST_METHOD"] == "POST"){
 	try {
 			//recupero les dades
-			$username = trim($_POST["username"]);
-			$contra = $_POST["password"];
+			$username = $_POST["username"];
+			$contra = hash("sha512",$_POST['password']);
 			//prepara sql amb la consulta que desitjem
 			$resultats = $connexio->prepare("SELECT user FROM users WHERE user = :username");
 			//introdueix l'usuari que volem buscar a la consulta
@@ -39,15 +38,16 @@ try {
 						$_SESSION["loggedin"] = true;
 						$_SESSION["id"] = $data2;
 						$_SESSION["username"] = $username; 
-						setcookie("userName",$username,time()+99999);
-						setcookie("data",date(DateTime::ISO8601),time()+99999);
+						
 						header("location: ../View/paginaUser.view.php");
 				}else{
 					$_SESSION['password_err'] = "Contrasenya incorrecta";
+					header("location: ../View/login.view.php");
 					
 				}
 			}else{// si no troba l'usuari guarden l'error que printara
 				$_SESSION['username_err'] = "Usuari no trobat";
+				header("location: ../View/login.view.php");
 			}	
 	} catch(PDOException $e){ //
 		// mostrarem els errors

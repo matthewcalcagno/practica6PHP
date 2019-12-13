@@ -29,19 +29,26 @@ require_once "../Controller/validacio.php";
     <div class="wrapper">
         <h2>Login</h2>
         <p>Introdueix les teves dades.</p>
+        <?php 
+            if(isset($_SESSION["password_err"])){
+                echo $_SESSION["password_err"];
+            } 
+            if(isset($_SESSION["username_err"])){
+                echo $_SESSION["username_err"];
+            }
+            ?>
+
         <form action=<?php echo "../Controller/validacio.php"; ?> method="post">
-            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                <label>Num d'usuari</label>
-                <input type="text" name="username" class="form-control" value="<?php echo $username; ?>" required>
-             <!-- Si troba un error a valicio.php el posara en la variable que toca per despres printarla -->   
-                <span class="help-block"><?php echo $username_err; ?></span>
+            <div class="form-group">
+                <label>Nom d'usuari</label>
+                <input type="text" name="username" class="form-control" required>
             </div>    
-            <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+            <div class="form-group ">
                 <label>Contrasenya</label>
                 <input type="password" name="password" class="form-control" required>
-                <span class="help-block"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group">
+                <label>Contrasenya</label>
                 <input type="submit" class="btn btn-primary" value="entra">
             </div>
         </form>
