@@ -9,8 +9,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     exit;
 }
  
-// Cridem l'arxiu que conectara amb el servidor
-require_once "../Controller/validacio.php";
+
 
 ?>
  
