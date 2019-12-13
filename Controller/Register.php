@@ -36,9 +36,10 @@ if(isset($_POST["user"])){
         echo $e;
     }
     if($res > 0){
-        echo "Usuario ya existe";
-        session_destroy();
-        die();
+        $_SESSION['username_err'] = "Error, usuario ya existe";
+        header("location: ../View/register.view.php");
+
+        
     }else{
         /**
          * If the username is not in the database, then it will add it to the database

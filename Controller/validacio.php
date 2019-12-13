@@ -43,10 +43,11 @@ try {
 						setcookie("data",date(DateTime::ISO8601),time()+99999);
 						header("location: ../View/paginaUser.view.php");
 				}else{
-					$password_err = "Contrasenya incorrecta";
+					$_SESSION['password_err'] = "Contrasenya incorrecta";
+					
 				}
 			}else{// si no troba l'usuari guarden l'error que printara
-				$username_err = "Usuari no trobat";
+				$_SESSION['username_err'] = "Usuari no trobat";
 			}	
 	} catch(PDOException $e){ //
 		// mostrarem els errors

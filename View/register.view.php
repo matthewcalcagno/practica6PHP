@@ -28,22 +28,29 @@ require_once "../Controller/validacio.php";
     <div class="wrapper">
         <h2>Registre</h2>
         <p>Introdueix les teves dades.</p>
+        <?php 
+            if(isset($_SESSION["password_err"])){
+                echo $_SESSION["password_err"];
+            } 
+            if(isset($_SESSION["username_err"])){
+                echo $_SESSION["username_err"];
+            }
+            ?>
         <form action=<?php echo "../Controller/Register.php"; ?> method="post">
-            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+            <div class="form-group">
                 <label>Numb d'usuari</label>
-                <input type="text" name="user" class="form-control" value="<?php echo $username; ?>" required>
+                <input type="text" name="user" class="form-control"  required>
              <!-- Si troba un error a valicio.php el posara en la variable que toca per despres printarla -->   
-                <span class="help-block"><?php echo $username_err; ?></span>
             </div>    
-            <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+            <div class="form-group">
+           
                 <label>Contrasenya</label>
                 <input type="password" name="password" class="form-control" required>
-                <span class="help-block"><?php echo $password_err; ?></span>
+                
             </div>
-            <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+            <div class="form-group">
                 <label>Repeteix la contrasenya</label>
                 <input type="password" name="password-Verify" class="form-control" required>
-                <span class="help-block"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="entra">
