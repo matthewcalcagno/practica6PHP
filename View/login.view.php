@@ -1,6 +1,6 @@
 <?php
 session_start();
-//Matias Aedo
+//Matias Aedo & Matthew Calcagno
 /* Login PHP que quan valida l'usuari al servidor deixa la sessio oberta.
    */
 // Comprova si l'usuari a fet login en aquesta sessio

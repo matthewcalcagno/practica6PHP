@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php
-    //Matias Aedo
+    //Matias Aedo & Matthew Calcagno
     // Cridem l'arxiu que conectara amb el servidor
     require_once "../Controller/paginaUser.php";
     ?>
@@ -18,7 +18,7 @@
     <?php echo "Id; ".$user['id']."<br>"; ?>
     <?php echo "Usuari; ".$user['user']."<br>";?>
     <form <?php echo "../Controller/paginaUser.php"; ?> method="post">
-    Select image to upload:
+   URL de la imagen:
     <input type="text" name="imatge" id="imatge">
     <input type="submit" value="Upload Image" name="submit">
 </form>

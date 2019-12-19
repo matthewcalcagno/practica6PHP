@@ -1,15 +1,17 @@
 <?php
 session_start();
-/**
- * Checks if the method is POST, by seeing if dni has a value
- * It will start a connection with the database, then send the form values to the database
- * Any errors will be echo'ed out.
- */
+//Matias Aedo & Matthew Calcagno
+ /**
+  * Mira si el metodo es POST, mirant si el dni te un valor
+  * Començara la conexio a la base de dades, i despres ho envia els valors a la base de dades
+  * Si hi ha un error, fara un echo
+  */
 
 
  /**
-  * If user is already logged in then the user will be redirectedt to 'paginaUser.view.php'
+  * Si l'usuari ja s'ha iniciat la sessió, es redirigirà a "pàginaUser.view.php"
   */
+
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     header("location: ../View/paginaUser.view.php");
     exit;
@@ -22,8 +24,8 @@ if(isset($_POST["user"])){
 
     
 /**
- * This will first check to see if the username already exists in the database.
- * If it exists, it will echo out the error and stop the connection
+ * En primer lloc, es comprovarà si el nom d’usuari ja existeix a la base de dades.
+ * Si existeix, es produirà l'error i es detindrà la connexió '
  */
     try{
         $connection = new PDO("mysql:host=localhost;dbname=practica6","root","");
@@ -42,7 +44,7 @@ if(isset($_POST["user"])){
         
     }else{
         /**
-         * If the username is not in the database, then it will add it to the database
+         *Si el nom d’usuari no es troba a la base de dades, l’afegirà a la base de dades
          */
 
         try{

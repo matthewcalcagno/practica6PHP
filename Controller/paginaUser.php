@@ -1,5 +1,6 @@
 <?php 
 session_start();
+//Matias Aedo & Matthew Calcagno
 /*
   Agafa desde el servidor les dades del usuari, permeteix que l'usuari pugi cambiar el seu fons.
 */
