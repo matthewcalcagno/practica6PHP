@@ -27,7 +27,6 @@ try {
   $resultats->execute();
   $back = $resultats->fetch(PDO::FETCH_ASSOC);
   $link_bg = $back['link_bg'];
-  echo $link_bg;
 
   //si es fa un POST agafara el link i el pujara a la base de dades
   if($_SERVER["REQUEST_METHOD"] == "POST"){
