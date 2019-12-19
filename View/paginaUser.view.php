@@ -21,6 +21,7 @@
     <?php echo "Id; ".$user['id']."<br>"; ?>
     <?php echo "Usuari; ".$user['user']."<br>";?>
     <form <?php echo "../Controller/paginaUser.php"; ?> method="post">
+
         Digues el link de la imatge:
         <input type="text" name="imatge" id="imatge">
         <input type="submit" value="Upload Image" name="submit">
@@ -28,3 +29,5 @@
 </body>
 </html>
     
+
+   

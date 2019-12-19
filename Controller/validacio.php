@@ -1,8 +1,8 @@
 <?php 
 session_start();
+//Matias Aedo & Matthew Calcagno
 /* Arxiu PHP que validara les dades que li pasem al servidor, una vegada validat redigira l'usuari a la
-	seva pagina personal i activara la sessio. Quan l'usuari inicia sessio, creara una cookie amb dades de l'usuari, per depres
-	ser capturades per la pagina del usuari.*/
+	seva pagina personal i activara la sessio. */
  
 //intenta conectarse a la base de dades si la troba
 try {
