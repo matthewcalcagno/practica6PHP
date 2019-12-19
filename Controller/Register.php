@@ -20,6 +20,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
 if(isset($_POST["user"])){
     $username = $_POST["user"];
+    //encriptacio de la contrasenya
     $password = hash("sha512",$_POST['password']);
 
     

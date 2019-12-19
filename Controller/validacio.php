@@ -15,6 +15,7 @@ try {
 	try {
 			//recupero les dades
 			$username = $_POST["username"];
+			//encriptacio de la contraseya
 			$contra = hash("sha512",$_POST['password']);
 			//prepara sql amb la consulta que desitjem
 			$resultats = $connexio->prepare("SELECT user FROM users WHERE user = :username");
